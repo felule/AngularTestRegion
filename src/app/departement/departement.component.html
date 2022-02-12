@@ -1,0 +1,38 @@
+<h2 class="m-4">Département</h2>
+
+<table mat-table [dataSource]="communes" class="mat-elevation-z8 w-50 ml-4">
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef>nom</th>
+      <td mat-cell *matCellDef="let element">{{element.nom}}</td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef>code</th>
+      <td mat-cell *matCellDef="let element">{{element.code}}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="codeDepartement">
+        <th mat-header-cell *matHeaderCellDef>code departement</th>
+        <td mat-cell *matCellDef="let element">{{element.codeDepartement}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="codeRegion">
+        <th mat-header-cell *matHeaderCellDef>code region</th>
+        <td mat-cell *matCellDef="let element">{{element.codeRegion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="population">
+        <th mat-header-cell *matHeaderCellDef>population</th>
+        <td mat-cell *matCellDef="let element">{{element.population}}</td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+        mat-row
+        *matRowDef="let element; columns: displayedColumns;"
+    ></tr>
+  </table>
